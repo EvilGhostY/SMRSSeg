@@ -10,3 +10,4 @@ scipy
 matplotlib
 einops
 addict
+thop

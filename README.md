@@ -2,7 +2,10 @@
 CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Category-Guided  Global-Local Feature Interaction
 
 
-Our training framework follows UNetFormer(https://github.com/WangLibo1995/GeoSeg), and only needs to be run by adding config, losseses, and models to its framework.
+Our training and testing framework follows UNetFormer (https://github.com/WangLibo1995/GeoSeg), which is a well-established framework, thanks to the author LiBo Wang for sharing it.
+
+
+Simply add config, losseses and models to its framework and it is ready to run.
 
 
 The relevant code is being organized and will be posted as soon as possible.

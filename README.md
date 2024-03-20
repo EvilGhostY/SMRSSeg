@@ -13,3 +13,9 @@ The relevant code is being organized and will be posted as soon as possible.
 If you don't want to retrain, we will also upload the data from the dataset in the following, as well as the weights of the relevant networks for direct testing.
 
 After finishing, we will release the Baidu cloud URL.（）
+
+
+If you find this project useful in your research, please consider citing：
+
+EIGNet：https://ieeexplore.ieee.org/abstract/document/10254241
+CGGLNet：

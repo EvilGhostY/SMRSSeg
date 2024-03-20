@@ -1,0 +1,25 @@
+Vaihingen Datasets:
+
+CGGLNet：
+python GeoSeg/train_supervision.py -c GeoSeg/config/vaihingen/cgglnet.py
+python GeoSeg/vaihingen_test.py -c GeoSeg/config/vaihingen/cgglnet.py -o GeoSeg/fig_results/vaihingen/cgglnet_test 
+python GeoSeg/inference_huge_image.py  -i GeoSeg/data/vaihingen/test_images  -c GeoSeg/config/vaihingen/eignet.py  -o GeoSeg/fig_results/vaihingen/eignet_huge -ph 1024 -pw 1024 -b 4 -d "pv"
+
+
+EIGNet：
+python GeoSeg/train_supervision.py -c GeoSeg/config/vaihingen/eignet.py
+python GeoSeg/vaihingen_test.py -c GeoSeg/config/vaihingen/eignet.py -o GeoSeg/fig_results/vaihingen/eignet_test 
+python GeoSeg/inference_huge_image.py  -i GeoSeg/data/vaihingen/test_images  -c GeoSeg/config/vaihingen/eignet.py  -o GeoSeg/fig_results/vaihingen/eignet_huge -ph 1024 -pw 1024 -b 4 -d "pv"
+
+
+Potsdam Datasets:
+CGGLNet：
+python GeoSeg/train_supervision.py -c GeoSeg/config/potsdam/cgglnet.py
+python GeoSeg/potsdam_test.py -c GeoSeg/config/potsdam/cgglnet.py -o GeoSeg/fig_results/potsdam/cgglnet_test 
+python GeoSeg/inference_huge_image.py  -i GeoSeg/data/potsdam/test_images  -c GeoSeg/config/potsdam/cgglnet.py  -o GeoSeg/fig_results/potsdam/cgglnet_huge   -ph 1024 -pw 1024  -b 4 -d "pv"
+
+EIGNet：
+python GeoSeg/train_supervision.py -c GeoSeg/config/potsdam/eignet.py
+python GeoSeg/potsdam_test.py -c GeoSeg/config/potsdam/eignet.py -o GeoSeg/fig_results/potsdam/eignet_test 
+python GeoSeg/inference_huge_image.py  -i GeoSeg/data/potsdam/test_images  -c GeoSeg/config/potsdam/eignet.py  -o GeoSeg/fig_results/potsdam/eignet_huge   -ph 1024 -pw 1024  -b 4 -d "pv"
+

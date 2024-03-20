@@ -105,7 +105,7 @@ class Conv(nn.Sequential):
 class ChannelPool(nn.Module):
     def forward(self, x):
         return torch.cat((torch.max(x, 1)[0].unsqueeze(1), torch.mean(x, 1).unsqueeze(1)), dim=1)
-    # [0]返回最大值 不加则会有最大值索引 实现BiFusion模块中通道拼接
+    #
 
 class ConvBN(nn.Sequential):
     def __init__(self, in_channels, out_channels, kernel_size=3, dilation=1, stride=1,
@@ -324,7 +324,7 @@ class EIGNet(nn.Module):
         self.cnn3 = self.backbone.layer3
         self.cnn4 = self.backbone.layer4
 
-        # 空间信息提取模块（边缘信息属于空间信息，设置辅助网络）
+        # 
         self.preedge = nn.Sequential(ConvBNReLU(3, encoder_channels[0], kernel_size=7, stride=2),
                                      SEM(in_channels=encoder_channels[0], out_channels=encoder_channels[0],
                                          kernel_size=3, stride=2),
@@ -334,16 +334,16 @@ class EIGNet(nn.Module):
         self.OCM2 = SEM(in_channels=encoder_channels[1], out_channels=encoder_channels[2], kernel_size=3, stride=2)
         self.OCM3 = SEM(in_channels=encoder_channels[2], out_channels=encoder_channels[3], kernel_size=3, stride=2)
 
-        ##边缘提取模块
+        ##
         self.getedge = EDGAuX(encoder_channels=encoder_channels, num_classes=num_classes)
 
-        ##空间、边缘与语义信息聚合
+        ##
         self.hiam = HIAM(in_channels=encoder_channels[0], out_channels=encoder_channels[0],num_classes = num_classes, kernel_size=3)
         self.hiam1 = HIAM(in_channels=encoder_channels[1], out_channels=encoder_channels[1],num_classes = num_classes,  kernel_size=3)
         self.hiam2 = HIAM(in_channels=encoder_channels[2], out_channels=encoder_channels[2],num_classes = num_classes,  kernel_size=3)
         self.hiam3 = HIAM(in_channels=encoder_channels[3], out_channels=encoder_channels[3],num_classes = num_classes,  kernel_size=3)
 
-        ## 特征增强
+        ## 
         self.oacm = OACM(in_channels=encoder_channels[0], out_channels=encoder_channels[0], kernel_size=3)
         self.oacm1 = OACM(in_channels=encoder_channels[1], out_channels=encoder_channels[1], kernel_size=3)
         self.oacm2 = OACM(in_channels=encoder_channels[2], out_channels=encoder_channels[2], kernel_size=3)
@@ -367,26 +367,30 @@ class EIGNet(nn.Module):
 
     def forward(self, x):
         h, w = x.size()[-2:]
-        # Encoder ResNet18 高级语义信息提取
+        # Encoder ResNet18 
         x_pre = self.cnn(x)
         res1 = self.cnn1(x_pre)
         res2 = self.cnn2(res1)
         res3 = self.cnn3(res2)
         res4 = self.cnn4(res3)
 
-        # 边缘检测
+        # 
+        
         s_pre = self.preedge(x)
         s1 = self.OCM(s_pre)
         s2 = self.OCM1(s1)
         s3 = self.OCM2(s2)
         s4 = self.OCM3(s3)
         fe, few = self.getedge(s1, s2, s3, s4, h, w)
-        ## 细节、边缘信息与语义信息聚合
+        
+        ## 
+        
         fuse1 = self.hiam(s1, res1, fe)
         fuse2 = self.hiam1(s2, res2, fe)
         fuse3 = self.hiam2(s3, res3, fe)
         fuse4 = self.hiam3(s4, res4, fe)
-        ##特征增强
+        
+        ##
 
         fuse4 = self.oacm3(fuse4)
         d4 = self.decoder4(fuse4) + fuse3

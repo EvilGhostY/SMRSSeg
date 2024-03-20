@@ -1,5 +1,8 @@
-# CGGLNet
-CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Category-Guided  Global-Local Feature Interaction
+# CGGLNet  EIGNet
+
+CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Category-Guided  Global-Local Feature Interaction（IEEE Transactions on Geoscience and Remote Sensing）
+
+EIGNet：Edge Guidance Network for Semantic Segmentation of High Resolution Remote Sensing Images（IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing，DOI: 10.1109/JSTARS.2023.3316307）
 
 
 Our training and testing framework follows UNetFormer (https://github.com/WangLibo1995/GeoSeg), which is a well-established framework, thanks to the author LiBo Wang for sharing it.

@@ -15,8 +15,10 @@ The relevant code is being organized and will be posted as soon as possible.
 
 If you don't want to retrain, we will also upload the data from the dataset in the following, as well as the weights of the relevant networks for direct testing.
 
-After finishing, we will release the Baidu cloud URL.（）
+After finishing, we will release the Baidu cloud URL.
 
+Link https://pan.baidu.com/s/1bY_oqsmkLe5PpvDhzM1HQg?pwd=l1qt  
+xtract code: l1qt
 
 If you find this project useful in your research, please consider citing：
 

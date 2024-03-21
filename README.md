@@ -1,6 +1,6 @@
 # CGGLNet  EIGNet
 
-CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Category-Guided  Global-Local Feature Interaction（IEEE Transactions on Geoscience and Remote Sensing）
+CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Category-Guided  Global-Local Feature Interaction（IEEE Transactions on Geoscience and Remote Sensing，DOI: 10.1109/TGRS.2024.3379398）
 
 EIGNet：Edge Guidance Network for Semantic Segmentation of High Resolution Remote Sensing Images（IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing，DOI: 10.1109/JSTARS.2023.3316307）
 
@@ -22,5 +22,26 @@ xtract code: l1qt
 
 If you find this project useful in your research, please consider citing：
 
-EIGNet：https://ieeexplore.ieee.org/abstract/document/10254241
+EIGNet：
+@ARTICLE{10254241,
+  author={Ni, Yue and Liu, Jiahang and Cui, Jian and Yang, Yuze and Wang, Xiaozhen},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
+  title={Edge Guidance Network for Semantic Segmentation of High-Resolution Remote Sensing Images}, 
+  year={2023},
+  volume={16},
+  number={},
+  pages={9382-9395},
+  keywords={Feature extraction;Semantics;Semantic segmentation;Image edge detection;Remote sensing;Convolution;Data mining;Edge information;orientation astrous convolution;remote sensing;semantic segmentation},
+  doi={10.1109/JSTARS.2023.3316307}}
+  
 CGGLNet：
+@ARTICLE{10475326,
+  author={Ni, Yue and Liu, Jiahang and Chi, Weijian and Wang, Xiaozhen and Li, Deren},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={CGGLNet: Semantic Segmentation Network for Remote Sensing Images Based on Category-Guided Global-Local Feature Interaction}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Semantic Segmentation;Remote Sensing;Category-Guided;Global Contextual Information;Transformer},
+  doi={10.1109/TGRS.2024.3379398}}

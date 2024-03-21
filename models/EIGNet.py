@@ -20,8 +20,7 @@ class DecoderBlock(nn.Module):
 
 
  #       self.deconv2 = nn.ConvTranspose2d(in_channels // 4, in_channels // 4, 3, stride=2, padding=1, output_padding=1)
-        self.CBR2 = nn.Sequential(nn.Conv2d(in_channels // 4, in_channels // 4, 1),
-                                  nn.BatchNorm2d(in_channels // 4),
+        self.CBR2 = nn.Sequential(nn.BatchNorm2d(in_channels // 4),
                                   nn.ReLU6())
 
 

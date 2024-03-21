@@ -425,13 +425,6 @@ if __name__ == '__main__':
     out,shape1 = net(x)
     print(out.shape)
     print(net.getedge.edgconv_out)
-    flops, params  = profile(net,(x,))
-    print("gflops = ",flops/1000000000.0)
-    print("params = ", params/1000000.0)
-
-    total = sum([param.nelement() for param in net.parameters()])
-    print("Number of parameter: %.2fM" % (total / 1e6))
-
 
 
 

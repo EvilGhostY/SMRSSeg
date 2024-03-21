@@ -670,6 +670,3 @@ if __name__ == '__main__':
     net = CGGLNet(num_classes)
     out,aux2,aux3,aux4 = net(x)
     print(out.shape)
-
-    total = sum([param.nelement() for param in net.parameters()])
-    print("Number of parameter: %.2fM" % (total / 1e6))

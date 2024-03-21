@@ -1,5 +1,3 @@
-""" Parts of the U-Net model """
-
 import timm
 import torch.nn.functional as F
 import torch

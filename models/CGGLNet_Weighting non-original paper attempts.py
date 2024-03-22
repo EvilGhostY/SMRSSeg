@@ -325,7 +325,9 @@ class GLSTB(nn.Module):
 
         b,c,h,w=x.size(0),x.size(1),x.size(2),x.size(3)
         qk = F.softmax(qk*self.weight_ratio, dim=1)
-        qk = process_tensor(qk,0.2,0.8,0.02)
+        qk = process_tensor(qk,0.2,0.8,0.005)
+
+#        qk = process_tensor(qk,0.2,0.8,0.01)
 
         vf = (x).clone()#[:, :, :, :].contiguous()  # b,c,h,w
         vqk_view = qk.clone().permute(0, 3, 2, 1).reshape(b * w, h, -1).contiguous()

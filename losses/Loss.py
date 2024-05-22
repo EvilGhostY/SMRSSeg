@@ -161,7 +161,7 @@ class EIGNetLoss(nn.Module):
 
         self.edge_loss = EdgeLoss(n_classes=6, radius=1, alpha=0.01)
 
-        self.boundary_loss = BoundaryLoss(n_classes=6, radius=1, alpha=0.01)
+        self.boundary_loss = BoundaryLoss(n_classes=1, radius=1, alpha=0.01)
 
     def get_boundary(self, x):
         laplacian_kernel_target = torch.tensor(

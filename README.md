@@ -38,10 +38,11 @@ CGGLNet：
 @ARTICLE{10475326,
   author={Ni, Yue and Liu, Jiahang and Chi, Weijian and Wang, Xiaozhen and Li, Deren},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={CGGLNet: Semantic Segmentation Network for Remote Sensing Images Based on Category-Guided Global-Local Feature Interaction}, 
+  title={CGGLNet: Semantic Segmentation Network for Remote Sensing Images Based on Category-Guided Global–Local Feature Interaction}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
-  pages={1-1},
-  keywords={Semantic Segmentation;Remote Sensing;Category-Guided;Global Contextual Information;Transformer},
+  pages={1-17},
+  keywords={Feature extraction;Transformers;Context modeling;Remote sensing;Semantic segmentation;Data mining;Adaptation models;Category-guided;global contextual information;remote sensing;semantic segmentation;transformer},
   doi={10.1109/TGRS.2024.3379398}}
+

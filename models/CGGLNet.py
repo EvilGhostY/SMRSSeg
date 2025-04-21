@@ -610,17 +610,17 @@ class CGGLNet(nn.Module):
                  decode_channels=32):
         super(CGGLNet, self).__init__()
 
-#        self.backbone = timm.create_model('swsl_resnet50', features_only=True, output_stride=32,
-#                                          out_indices=(1, 2, 3, 4), pretrained=True)
-#        encoder_channels = self.backbone.feature_info.channels()
+        self.backbone = timm.create_model('swsl_resnet50', features_only=True, output_stride=32,
+                                          out_indices=(1, 2, 3, 4), pretrained=True)
+        encoder_channels = self.backbone.feature_info.channels()
 
-        pretrained_cfg = timm.models.create_model('swsl_resnet50', features_only=True, output_stride=32,
-                                                  out_indices=(1, 2, 3, 4)).default_cfg
-        pretrained_cfg[
-            'file'] = r'C:\\Users\\MeloNy\\.cache\\torch\\hub\\checkpoints\\semi_weakly_supervised_resnet50-16a12f1b.pth'
-        self.backbone = timm.models.swsl_resnet50(pretrained=True, pretrained_cfg=pretrained_cfg)
+#        pretrained_cfg = timm.models.create_model('swsl_resnet50', features_only=True, output_stride=32,
+#                                                  out_indices=(1, 2, 3, 4)).default_cfg
+#        pretrained_cfg[
+#            'file'] = r'C:\\Users\\MeloNy\\.cache\\torch\\hub\\checkpoints\\semi_weakly_supervised_resnet50-16a12f1b.pth'
+#        self.backbone = timm.models.swsl_resnet50(pretrained=True, pretrained_cfg=pretrained_cfg)
 
-        encoder_channels = [info['num_chs'] for info in self.backbone.feature_info]
+#        encoder_channels = [info['num_chs'] for info in self.backbone.feature_info]
 
 
         self.cnn = nn.Sequential(self.backbone.conv1,

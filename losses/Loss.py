@@ -228,6 +228,27 @@ class CGGLNetLoss(nn.Module):
 
         return loss
 
+class CIGFormerLoss(nn.Module):
+    def __init__(self, ignore_index=255, edge_factor=10.0):
+        super(CGGLNetLoss, self).__init__()
+        self.main_loss = JointLoss(SoftCrossEntropyLoss(smooth_factor=0.05, ignore_index=ignore_index),
+                                   DiceLoss(smooth=0.05, ignore_index=ignore_index), 1.0, 1.0)
+
+        self.aux_loss = JointLoss(SoftCrossEntropyLoss(smooth_factor=0.05, ignore_index=ignore_index),
+                                   DiceLoss(smooth=0.05, ignore_index=ignore_index), 1.0, 1.0)
+
+
+    def forward(self, logits, labels):
+        if self.training and len(logits) == 4:
+            logit_main,aux2,aux3,aux4 = logits
+            loss = self.main_loss(logit_main, labels)\
+                   + (self.aux_loss(aux2, labels) + self.aux_loss(aux3, labels) + self.aux_loss(aux4, labels)) * 1.0
+
+        else:
+            loss = self.main_loss(logits, labels)
+
+        return loss
+
 
 if __name__ == '__main__':
     targets = torch.randint(low=0, high=2, size=(2, 16, 16))

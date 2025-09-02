@@ -4,7 +4,7 @@ CGGLNet: Semantic Segmentation Network for  Remote Sensing Images Based on Categ
 
 EIGNet：Edge Guidance Network for Semantic Segmentation of High Resolution Remote Sensing Images（IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing，DOI: 10.1109/JSTARS.2023.3316307）
 
-CIGFormer：Category-Guided Transformer for Semantic Segmentation of High-Resolution Remote Sensing Images（Remote Sens，(https://doi.org/10.3390/rs17173054)）
+CIGFormer：Category-Guided Transformer for Semantic Segmentation of High-Resolution Remote Sensing Images（Remote Sens，(https://www.mdpi.com/2072-4292/17/17/3054)）
 
 Our training and testing framework follows UNetFormer (https://github.com/WangLibo1995/GeoSeg), which is a well-established framework, thanks to the author LiBo Wang for sharing it.
 
